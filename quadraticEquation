@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class quadraticEquation {
+	public static void main(String args[]){
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Enter the coefficient of a : ");
+		double a = scanner.nextDouble();
+
+		System.out.print("Enter the coefficient of b : ");
+		double b = scanner.nextDouble();
+
+		System.out.print("Enter the constant value c : ");
+		double c = scanner.nextDouble();
+
+		double discriminant = b*b - 4*a*c;
+		
+		if(a==0){
+			System.out.print("Not a quadratic equation");
+			}
+
+		else if(discriminant>0){
+			double r1 = (-b + Math.sqrt(discriminant))/(2*a);
+			double r2 = (-b - Math.sqrt(discriminant))/(2*a);
+			System.out.println(r1);
+			System.out.println(r2);	
+			System.out.println("Real and distinct roots");
+			}
+
+		else if(discriminant==0){
+			double r1 = -b/(2*a);
+			double r2 = -b/(2*a);
+			System.out.println(r1);
+			System.out.println(r2);	
+			System.out.println("Real and equal roots");
+			}
+
+		else{
+			System.out.println("Imaginary roots");
+			}
+	scanner.close();
+	}
+}
+
+				
