@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+abstract class Shape {
+    double width;
+    double height;
+  
+    abstract void printArea();
+}
+
+class Rectangle extends Shape {
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+
+    }
+
+ 
+    public void printArea() {
+        double area = width * height;
+        System.out.println("The Area of a Rectangle: " + area);
+    }
+}
+
+class Triangle extends Shape {
+    public Triangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+
+    }
+
+
+    public void printArea() {
+        double area = 0.5 * width * height;
+        System.out.println("The Area of a Triangle: " + area);
+    }
+}
+
+class Circle extends Shape {
+    public Circle(double radius) {
+        this.width = radius;
+
+    }
+
+ 
+    public void printArea() {
+        double area = (22.0 / 7) * width * width; 
+        System.out.println("The Area of a Circle: " + area);
+    }
+}
+
+public class Area {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.print("Enter the dimensions of a rectangle (Width Height): ");
+        double rectWidth = sc.nextDouble();
+        double rectHeight = sc.nextDouble();
+        Shape rectangle = new Rectangle(rectWidth, rectHeight);
+        rectangle.printArea();
+
+       
+        System.out.print("Enter the dimensions of a triangle (Width Height): ");
+        double triWidth = sc.nextDouble();
+        double triHeight = sc.nextDouble();
+        Shape triangle = new Triangle(triWidth, triHeight);
+        triangle.printArea();
+
+    
+        System.out.print("Enter the dimensions of a circle (Radius): ");
+        double radius = sc.nextDouble();
+        Shape circle = new Circle(radius);
+        circle.printArea();
+
+        sc.close();
+    }
+}
